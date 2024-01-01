@@ -1,0 +1,9 @@
+---
+- name: Reload Nginx
+  ansible.builtin.systemd:
+    name: nginx
+    state: reloaded
+
+# We can also use community.general.supervisorctl
+- name: Reload supervisord
+  ansible.builtin.command: supervisorctl reload

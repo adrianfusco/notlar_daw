@@ -1,0 +1,6 @@
+---
+all:
+  hosts:
+    {our_server}:
+      ansible_ssh_user: {our_user}
+      ansible_ssh_private_key_file: {our_key}

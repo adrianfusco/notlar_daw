@@ -1,0 +1,353 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-12-15 23:17+0100\n"
+"PO-Revision-Date: 2023-12-06 19:16+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: notlar/templates/contact.html:20
+msgid "Contact us"
+msgstr "Contáctanos"
+
+#: notlar/templates/contact.html:24 notlar/templates/nav_index.html:122
+#: notlar/templates/reset_password.html:16 notlar/templates/settings.html:21
+msgid "Name"
+msgstr "Nombre"
+
+#: notlar/templates/contact.html:27
+#, fuzzy
+msgid "Your Name"
+msgstr "Tu correo electrónico"
+
+#: notlar/templates/contact.html:32 notlar/templates/settings.html:16
+msgid "Email"
+msgstr "Correo"
+
+#: notlar/templates/contact.html:35
+#, fuzzy
+msgid "Your Email"
+msgstr "Tu correo electrónico"
+
+#: notlar/templates/contact.html:39
+msgid "Message"
+msgstr "Mensaje"
+
+#: notlar/templates/contact.html:42
+msgid "Type your message"
+msgstr "Escribe tu mensaje"
+
+#: notlar/templates/dashboard_all_notes.html:10
+#, fuzzy
+msgid "Range Calendar"
+msgstr "Calendario y notas"
+
+#: notlar/templates/dashboard_all_notes.html:25
+msgid "Start date"
+msgstr "Fecha de inicio"
+
+#: notlar/templates/dashboard_all_notes.html:27
+msgid "to"
+msgstr "hasta"
+
+#: notlar/templates/dashboard_all_notes.html:38
+msgid "End date"
+msgstr "Fecha de fin"
+
+#: notlar/templates/dashboard_all_notes.html:48
+msgid "All notes per range selected days"
+msgstr "Todas las notas por el rango seleccionado de días"
+
+#: notlar/templates/dashboard_all_notes.html:54 notlar/templates/nav.html:173
+msgid "Notes management"
+msgstr "Gestión de notas"
+
+#: notlar/templates/dashboard_notes_management.html:10
+#, fuzzy
+msgid "Calendar"
+msgstr "Calendario y notas"
+
+#: notlar/templates/dashboard_notes_management.html:33
+msgid "Leave a comment for your note..."
+msgstr "Deja un comentario para tu nota..."
+
+#: notlar/templates/dashboard_notes_management.html:34
+#, fuzzy
+msgid "Create note"
+msgstr "Crear nota"
+
+#: notlar/templates/dashboard_notes_management.html:45
+msgid "Notes"
+msgstr "Notas"
+
+#: notlar/templates/dashboard_notes_management.html:51
+#: notlar/templates/nav.html:185
+msgid "All notes"
+msgstr "Todas las notas"
+
+#: notlar/templates/error.html:7
+#, fuzzy
+msgid "There's an server error"
+msgstr "Hay un error en el servidor"
+
+#: notlar/templates/error.html:8
+msgid "Please contact the administrator"
+msgstr "Por favor, contacta al administrador"
+
+#: notlar/templates/error.html:9 notlar/templates/not_found.html:10
+msgid "Back to Homepage"
+msgstr "Volver a la página de inicio"
+
+#: notlar/templates/footer.html:4
+#, fuzzy
+msgid "Contact"
+msgstr "Contáctanos"
+
+#: notlar/templates/forgot_password.html:11
+#: notlar/templates/forgot_password.html:30
+#: notlar/templates/reset_password.html:31
+#, fuzzy
+msgid "Reset password"
+msgstr "Recuperar contraseña"
+
+#: notlar/templates/forgot_password.html:12
+msgid "Fill up the form to reset the password"
+msgstr ""
+
+#: notlar/templates/forgot_password.html:19
+msgid "Enter email address"
+msgstr ""
+
+#: notlar/templates/index.html:11
+msgid "Calendar and notes"
+msgstr "Calendario y notas"
+
+#: notlar/templates/index.html:12
+msgid "Good way to schedule your life"
+msgstr "Una buena manera de organizar tu vida"
+
+#: notlar/templates/index.html:24
+msgid "Designed for creating notes"
+msgstr "Diseñado para crear notas"
+
+#: notlar/templates/index.html:25
+msgid "You are able to organize and schedule your work, studies, etc"
+msgstr "Podrás organizar y planificar tu trabajo, estudios, etc."
+
+#: notlar/templates/index.html:38
+msgid "Notes for improving your time"
+msgstr "Notas para mejorar tu gestión del tiempo"
+
+#: notlar/templates/index.html:39
+msgid ""
+"Create personalized notes to improve your time management skills and make"
+" the most out of every moment"
+msgstr ""
+"Crea notas personalizadas para mejorar tus habilidades de gestión del "
+"tiempo y aprovechar al máximo cada momento"
+
+#: notlar/templates/index.html:52
+msgid "Take notes of your lessons"
+msgstr "Toma notas de tus lecciones"
+
+#: notlar/templates/index.html:53
+msgid ""
+"Create important notes from your lessons, ensuring a comprehensive and "
+"organized record of valuable information"
+msgstr ""
+"Crea notas importantes de tus lecciones, asegurando un registro completo "
+"y organizado de información valiosa"
+
+#: notlar/templates/index.html:69
+msgid "Have a better organization at work"
+msgstr "Ten una mejor organización en el trabajo"
+
+#: notlar/templates/index.html:70
+msgid ""
+"Improve your work game time creating notes that facilitate better "
+"organization, helping you stay on top of tasks and deadlines"
+msgstr ""
+"Mejora tu productividad en el trabajo creando notas que facilitan una "
+"mejor organización, ayudándote a mantenerte al tanto de tareas y plazos"
+
+#: notlar/templates/index.html:79
+msgid "Nice calendar design"
+msgstr "Diseño agradable de calendario"
+
+#: notlar/templates/index.html:80
+msgid ""
+"Unlock the potential of your schedule with the intuitive Notlar Calendar "
+"App"
+msgstr ""
+"Desbloquea el potencial de tu agenda con la intuitiva aplicación de "
+"calendario Notlar"
+
+#: notlar/templates/nav.html:11
+msgid "Open sidebar"
+msgstr "Abrir barra lateral"
+
+#: notlar/templates/nav.html:46
+msgid "Open user menu"
+msgstr "Abrir menú de usuario"
+
+#: notlar/templates/nav.html:68
+msgid "Settings"
+msgstr "Configuración"
+
+#: notlar/templates/nav.html:73
+msgid "Sign out"
+msgstr "Cerrar sesión"
+
+#: notlar/templates/nav.html:78
+msgid "Language"
+msgstr "Idioma"
+
+#: notlar/templates/nav.html:108
+msgid "English"
+msgstr "Inglés"
+
+#: notlar/templates/nav.html:118
+msgid "Galician"
+msgstr "Gallego"
+
+#: notlar/templates/nav.html:128
+msgid "Spanish"
+msgstr "Español"
+
+#: notlar/templates/nav.html:159
+msgid "Dashboard Home"
+msgstr ""
+
+#: notlar/templates/nav_index.html:16
+msgid "Log In"
+msgstr "Iniciar sesión"
+
+#: notlar/templates/nav_index.html:21 notlar/templates/nav_index.html:150
+msgid "Sign Up"
+msgstr "Registrarse"
+
+#: notlar/templates/nav_index.html:49
+msgid "Login into Notlar"
+msgstr "Inicia sesión en Notlar"
+
+#: notlar/templates/nav_index.html:59 notlar/templates/nav_index.html:115
+msgid "Close modal"
+msgstr "Cerrar modal"
+
+#: notlar/templates/nav_index.html:65
+msgid "Your email"
+msgstr "Tu correo electrónico"
+
+#: notlar/templates/nav_index.html:72 notlar/templates/nav_index.html:141
+msgid "Your password"
+msgstr "Tu contraseña"
+
+#: notlar/templates/nav_index.html:84
+msgid "Remember me"
+msgstr "Recuérdame"
+
+#: notlar/templates/nav_index.html:86 notlar/templates/nav_index.html:147
+msgid "Recover password"
+msgstr "Recuperar contraseña"
+
+#: notlar/templates/nav_index.html:89
+msgid "Login to your account"
+msgstr "Inicia sesión en tu cuenta"
+
+#: notlar/templates/nav_index.html:105
+msgid "Register for using Notlar"
+msgstr "Regístrate para usar Notlar"
+
+#: notlar/templates/nav_index.html:128 notlar/templates/settings.html:26
+msgid "Last Name"
+msgstr "Apellido"
+
+#: notlar/templates/nav_index.html:134
+msgid "Your email (It will be your username)"
+msgstr "Tu correo electrónico (será tu nombre de usuario)"
+
+#: notlar/templates/not_found.html:8
+msgid "Something's missing"
+msgstr "Falta algo"
+
+#: notlar/templates/reset_password.html:10
+#, fuzzy
+msgid "Password Recovery"
+msgstr "Tu contraseña"
+
+#: notlar/templates/reset_password.html:13 notlar/templates/settings.html:35
+#, fuzzy
+msgid "New Password"
+msgstr "Tu contraseña"
+
+#: notlar/templates/reset_password.html:18
+#: notlar/templates/reset_password.html:21 notlar/templates/settings.html:39
+#, fuzzy
+msgid "Confirm your new password"
+msgstr "Tu contraseña"
+
+#: notlar/templates/settings.html:31
+#, fuzzy
+msgid "Old Password"
+msgstr "Tu contraseña"
+
+#: notlar/templates/settings.html:43
+msgid "Profile Picture"
+msgstr "Foto de perfil"
+
+#: notlar/templates/settings.html:50
+#, fuzzy
+msgid "Update Settings"
+msgstr "Configuración"
+
+#~ msgid "Please fill out the following form and we will get back to you shortly"
+#~ msgstr ""
+#~ "Por favor, completa el siguiente "
+#~ "formulario y nos pondremos en contacto"
+#~ " contigo en breve"
+
+#~ msgid "Any issue or idea?"
+#~ msgstr "¿Algún problema o idea?"
+
+#~ msgid "Phone"
+#~ msgstr "Teléfono"
+
+#~ msgid "Not available for now"
+#~ msgstr "No disponible por ahora"
+
+#~ msgid "Address"
+#~ msgstr "Dirección"
+
+#~ msgid "Lost Password?"
+#~ msgstr "¿Olvidaste tu contraseña?"
+
+#~ msgid "Do you already have an account?"
+#~ msgstr "¿Ya tienes una cuenta?"
+
+#~ msgid "Login"
+#~ msgstr "Iniciar sesión"
+
+#~ msgid "First Name"
+#~ msgstr "Apellido"
+
+#~ msgid "Upload File"
+#~ msgstr "Subir fichero"
+
+#~ msgid "The picture will be displayed in the menu"
+#~ msgstr "La foto se mostrará en el menu"
+
+#~ msgid "Submit"
+#~ msgstr "Enviar"
+

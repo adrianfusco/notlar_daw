@@ -1,0 +1,15 @@
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/help.css') }}">
+<!-- Help Button -->
+<div id="help-button" class="help-button">
+    <i class="fas fa-question-circle"></i>
+</div>
+<!-- Help Window -->
+<div id="help-window" class="help-window">
+    <div class="help-content">
+        <p>{{ _('If you need help or there's a bug please open an Issue in') }}<a href="https://github.com/adrianfusco/notlar_daw/">Notlar GitLab</a>.
+        </p>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/help.js') }}"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

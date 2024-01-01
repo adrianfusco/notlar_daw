@@ -1,0 +1,14 @@
+---
+notlar_dependency_packages:
+  - nginx
+  - supervisor
+  - python3
+  - python3-pip
+  - postgresql
+  - postgresql-contrib
+  - libpq-dev
+  - psycopg2
+
+
+notlar_dependency_python_modules:
+  - virtualenv

@@ -1,0 +1,7 @@
+---
+- name: Upload Nginx configuration file
+  template:
+    src: notlar.conf.j2
+    dest: /etc/supervisor/conf.d/notlar.conf
+  notify: Reload supervisord
+  become: true

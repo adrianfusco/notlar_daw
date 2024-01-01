@@ -1,0 +1,15 @@
+---
+- name: Install required packages
+  ansible.builtin.import_tasks: packages.yml
+
+- name: Setup user and virtual environment for application
+  ansible.builtin.import_tasks: user_setup.yml
+
+- name: Setup notlar database
+  ansible.builtin.import_tasks: database.yml
+
+- name: Configure Nginx
+  ansible.builtin.import_tasks: reverse-proxy.yml
+
+- name: Configure supervisord and start notlar Flask app
+  ansible.builtin.import_tasks: supervisord.yml

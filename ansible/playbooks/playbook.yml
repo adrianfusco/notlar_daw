@@ -1,0 +1,8 @@
+---
+- name: Setup notlar app
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Setup notlar app
+      ansible.builtin.import_role:
+        name: notlar_setup

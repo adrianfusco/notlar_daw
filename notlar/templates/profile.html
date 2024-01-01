@@ -1,0 +1,110 @@
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+{% include 'nav.html' %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+            <div class="my-4">
+                <form id="profile-form" enctype="multipart/form-data">
+                    <div class="row mt-5 align-items-center">
+                        <div class="col-md-3 text-center mb-5">
+                            <div class="avatar avatar-xl">
+                                <img src="{% if user.profile_picture %}{{ url_for('static', filename='img/users/' + user.profile_picture) }}{% else %}{{ url_for('static', filename='img/users/default.png') }}{% endif %}"
+                                    alt="Profile Picture">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="profilePicture">Profile Picture</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="profilePicture" name="profile_picture">
+                                <label class="custom-file-label" for="profilePicture">Choose file</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col">
+                        <div class="row align-items-center">
+                            <div class="col-md-7">
+                                <h4 class="mb-1">{{ user.name }} {{ user.last_name }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4" />
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputFirstName">First name</label>
+                            <input type="text" class="form-control" id="inputFirstName" name="name"
+                                value="{{ user.name }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lastname">Last name</label>
+                            <input type="text" id="lastname" class="form-control" name="last_name"
+                                value="{{ user.last_name }}">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" name="email"
+                                value="{{ user.email }}" readonly>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputIsername">Username</label>
+                            <input type="text" class="form-control" id="inputUsername" name="username"
+                                value="{{ user.username }}" readonly>
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputTelegram">Telegram ID (just for alerts)</label>
+                            <input type="text" class="form-control" id="inputTelegram" name="telegram_user"
+                                value="{{ user.telegram_user }}">
+                        </div>
+                    </div>
+                    <hr class="my-4" />
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputOldPassword">Old Password</label>
+                                <input type="password" class="form-control" id="inputOldPassword" name="old_password" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword">New Password</label>
+                                <input type="password" class="form-control" id="inputPassword" name="new_password" />
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword"
+                                    name="confirm_password" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="mb-2">Password requirements</p>
+                            <p class="small text-muted mb-2">To create a new password, you have to meet all of the
+                                following requirements:</p>
+                            <ul class="small text-muted pl-4 mb-0">
+                                <li>Minimum 8 character</li>
+                                <li>At least one special character</li>
+                                <li>At least one number</li>
+                                <li>Can’t be the same as a previous password</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Save Change</button>
+                </form>
+                <br>
+                <div id="feedback-message"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
+<script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+{% endblock %}

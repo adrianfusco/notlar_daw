@@ -1,0 +1,4 @@
+include requirements.txt
+recursive-include notlar/static *
+recursive-include notlar/templates *
+recursive-include notlar/translations *

@@ -1,0 +1,56 @@
+---
+stages:
+  - test
+  - build
+  - deploy
+
+variables:
+  DOCKER_IMAGE_TAG: latest
+  DOCKER_IMAGE_NAME: notlar
+
+.ci_master_mr_rule: &ci_master_mr_rule
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+
+.before_script_ssh_configuration:
+  before_script:
+    # https://docs.gitlab.com/ee/ci/ssh_keys/#ssh-keys-when-using-the-docker-executor
+    - which ssh-agent || ( apk add --update openssh )
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+
+
+tox_job:
+  stage: test
+  image: python:3.8
+  script:
+    - pip install tox
+    - tox -v
+  <<: *ci_master_mr_rule
+
+build_image:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:v1.7.0-debug
+    entrypoint: [""]
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"$REGISTRY_HOST\":{\"username\":\"$REGISTRY_USERNAME\",\"password\":\"$REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --context "${CI_PROJECT_DIR}" --dockerfile "${CI_PROJECT_DIR}/Dockerfile" --destination "${REGISTRY_HOST}/${REGISTRY_USERNAME}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}"
+  rules:
+    - changes:
+        - "notlar/**/*"
+
+deploy-notlar:
+  extends: .before_script_ssh_configuration
+  stage: deploy
+  image: alpine:latest
+  script:
+    - ssh -o StrictHostKeyChecking=no $REMOTE_USER@$REMOTE_SERVER 'sudo -u notlar bash -ic "source /home/notlar/venv/bin/activate && pip3 install --upgrade notlar"'
+    - ssh -o StrictHostKeyChecking=no $REMOTE_USER@$REMOTE_SERVER 'sudo supervisorctl reload'
+  rules:
+    - changes:
+        - "notlar/**/*"

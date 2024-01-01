@@ -1,0 +1,9 @@
+[program:{{ app_user }}]
+directory={{ app_home }}
+command={{ app_user }}
+user={{ app_user }}
+autostart=true
+autorestart=true
+killasgroup=true
+stderr_logfile={{ app_home }}/notlar.err.log
+stdout_logfile={{ app_home }}/notlar.out.log

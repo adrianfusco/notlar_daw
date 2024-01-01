@@ -1,0 +1,10 @@
+---
+app_user: notlar
+app_home: "/home/{{ app_user }}"
+virtualenv_path: "{{ app_home }}/venv/"
+# WARNING: Development purposes.
+# For security pass the arguments other way.
+db_user: notlar
+db_password: notlar
+db_name: notlar
+domain_name: afusco.eu

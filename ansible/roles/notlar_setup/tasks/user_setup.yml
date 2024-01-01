@@ -1,0 +1,19 @@
+---
+- name: Create user for application
+  become: true
+  ansible.builtin.user:
+    name: "{{ app_user }}"
+    state: present
+    shell: /bin/bash
+
+- name: Create virtual environment
+  ansible.builtin.command: "virtualenv {{ virtualenv_path }}"
+  become: true
+  become_user: "{{ app_user }}"
+
+- name: Install notlar modules
+  ansible.builtin.pip:
+    name: notlar
+    virtualenv: "{{ virtualenv_path }}"
+  become: true
+  become_user: "{{ app_user }}"

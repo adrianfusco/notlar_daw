@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+{% include 'head.html' %}
+
+<link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
+<script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+
+<body>
+    {% include 'nav_index.html' %}
+
+
+    <div class="container my-20 mx-auto md:px-6">
+        <section class="mb-32 text-center">
+            <div class="py-12 md:px-12">
+                <div class="container mx-auto xl:px-32">
+                    <div class="grid items-center lg:grid-cols-2">
+                        <div class="mb-12 md:mt-12 lg:mt-0 lg:mb-0">
+                            <div
+                                class="relative z-[1] block rounded-lg bg-[hsla(0,0%,100%,0.55)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] dark:bg-gray-700 dark:shadow-black/20 md:px-12 lg:-mr-14">
+                                <h1 class="text-5xl/relaxed text-gray-700 dark:text-white">{{ _('Contact us') }}</h1>
+                                <form action="{{ url_for('contact') }}" method="post">
+                                    <div class="relative mb-6" data-te-input-wrapper-init>
+                                        <div class="mb-5">
+                                            <label for="name" class="block text-sm font-medium mb-1 text-gray-600 dark:text-white">{{_('Name') }}<span class="text-red-500"></span></label>
+                                            <input type="text" name="name"
+                                                class="py-2 px-4 leading-6 block w-full border-gray-300 rounded text-sm focus:border-gray-300 focus:ring-0"
+                                                id="name" placeholder="{{ _('Your Name') }}">
+                                        </div>
+                                    </div>
+                                    <div class="relative mb-6" data-te-input-wrapper-init>
+                                        <label for="email" class="block text-sm font-medium mb-1 text-gray-600 dark:text-white">{{
+                                            _('Email') }}<span class="text-red-500"></span></label>
+                                        <input type="email" name="email"
+                                            class="py-2 px-4 leading-6 block w-full border-gray-300 rounded text-sm focus:border-gray-300 focus:ring-0"
+                                            id="email" placeholder="{{ _('Your Email') }}">
+                                    </div>
+                                    <div class="relative mb-6" data-te-input-wrapper-init>
+                                        <label for="message" class="block text-sm font-medium mb-1 text-gray-600 dark:text-white">{{
+                                            _('Message') }}<span class="text-red-500"></span></label>
+                                        <textarea name="message" minlength="10"
+                                            class="py-2 px-4 leading-6 block w-full border-gray-300 rounded text-sm focus:border-gray-300 focus:ring-0"
+                                            id="message" rows="4" placeholder="{{ _('Type your message') }}"></textarea>
+                                    </div>
+
+                                    <button type="submit"
+                                        class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Send</button>
+
+                                </form>
+                                {% with messages = get_flashed_messages(with_categories=true) %}
+                                {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                    {{ message }}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                {% endfor %}
+                                {% endwith %}
+                            </div>
+                        </div>
+                        <div class="md:mb-12 lg:mb-0">
+                            <div class="relative h-[700px] rounded-lg shadow-lg dark:shadow-black/20">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.7194984910916!2d-8.549812823244542!3d42.878764302172904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2efe419fe52f15%3A0x63b8a543bf549f26!2sI.E.S.%20San%20Clemente%20(Instituto%20de%20Formaci%C3%B3n%20Profesional)!5e0!3m2!1ses!2ses!4v1701880361374!5m2!1ses!2ses"
+                                    class="absolute left-0 top-0 h-full w-full rounded-lg" frameborder="0"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    {% include 'footer.html' %}
+    {% include 'dark_light_mode_base.html' %}
