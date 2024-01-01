@@ -23,7 +23,7 @@ Podemos levantar todo el escenario usando Docker compose. Debemos asegurarnos de
 1. Clonamos el repositorio donde se encuentra nuestro proyecto:
 
 ```bash
-$ git clone https://github.com/adrianfusco/notlar_daw.git
+$ git clone https://gitlab.iessanclemente.net/dawd/a23adrianfa.git
 $ cd notlar
 ```
 
@@ -200,9 +200,36 @@ Por defecto la aplicación subirá los ficheros .py que se encuentren dentro de 
 
 Si queremos añadir más ficheros al paquete creado por [setup.py](setup.py) podemos editar nuestro [MANIFEST.in](MANIFEST.in).
 
+
+## supervisord
+
+
+La aplicación se ejecutará con supervisord. De esta manera podemos tratar nuestro programa como un servicio (iniciarlo, pararlo, reiniciarlo, status).
+```
+# supervisorctl status
+notlar                           RUNNING   pid 42810, uptime 0:14:10
+
+# ps -auxxxwwwf | grep notlar
+root       39702  0.0  0.2   9604  4224 pts/1    S    13:32   0:00  |                           \_ su notlar
+notlar     39703  0.0  0.2   8984  5248 pts/1    S+   13:32   0:00  |                               \_ bash
+root       42885  0.0  0.1   7004  2176 pts/3    S+   22:45   0:00                              \_ grep --color=auto notlar
+notlar     42810  0.1  3.4  87768 67868 ?        S    22:31   0:01  \_ /home/notlar/venv/bin/python /home/notlar/venv/bin/notlar
+notlar     42811  0.0  2.8  87768 56516 ?        S    22:31   0:00      \_ /home/notlar/venv/bin/python /home/notlar/venv/bin/notlar
+notlar     42812  0.0  2.8  87768 56516 ?        S    22:31   0:00      \_ /home/notlar/venv/bin/python /home/notlar/venv/bin/notlar
+notlar     42813  0.0  2.8  87768 56516 ?        S    22:31   0:00      \_ /home/notlar/venv/bin/python /home/notlar/venv/bin/notlar
+notlar     42814  0.0  2.8  87768 56516 ?        S    22:31   0:00      \_ /home/notlar/venv/bin/python /home/notlar/venv/bin/notlar
+```
+
+Podemos encontrar una plantilla para saber como está configurado nuestro servicio:
+[supervisord.yml](./ansible/roles/notlar_setup/tasks/supervisord.yml)
+
 ## Logo
 
 Logo de la aplicación creado con: [NameCheap Logo Maker](https://www.namecheap.com/logo-maker/)
+
+## Esquema del Proyecto
+
+![Notlar Esquema](notlar_architecture.png)
 
 ## Licencia
 
